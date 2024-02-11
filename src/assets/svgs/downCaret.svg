@@ -1,0 +1,6 @@
+<svg viewBox="0 0 24 24" fill="none"
+  xmlns="http://www.w3.org/2000/svg">
+  <title>Caret</title>
+  <desc>A caret to signify dropdown direction</desc>
+  <path d="m20.125 10.703-7.46 7.149c-.235.195-.47.273-.665.273a1.06 1.06 0 0 1-.664-.234l-7.5-7.188a.932.932 0 0 1-.04-1.328.932.932 0 0 1 1.329-.04L12 15.899l6.836-6.562a.932.932 0 0 1 1.328.039.932.932 0 0 1-.039 1.328Z" />
+</svg>

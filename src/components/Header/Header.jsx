@@ -1,6 +1,8 @@
 import { useContext, useState } from "react"
 import AuthModal from "../AuthModal/AuthModal"
 import { AuthContext } from "../../contexts/AuthContext"
+import DownCaretIcon from "../../assets/svgs/downCaret.svg?react"
+import DefaultUserIcon from "../../assets/svgs/defaultUserIcon.svg?react"
 
 const Header = () => {
   const { user } = useContext(AuthContext)
@@ -14,9 +16,10 @@ const Header = () => {
   return <header className="flex relative justify-between p-8 border-b-black border-b">
     <h1 className="text-xl">Buy Books</h1>
     <div>
-      <button onClick={handleClick}>
+      <button className="flex gap-2" onClick={handleClick}>
+        <DefaultUserIcon className="w-6 h-6 fill-black" />
         {isLoggedIn ? <span>{user.full_name}</span> : <span>Log In</span>}
-        {/* ICON HERE */}
+        <DownCaretIcon className="w-6 h-6 fill-black" />
       </button>
     </div>
     {showAuthModal && <AuthModal />}
