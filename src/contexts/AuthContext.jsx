@@ -10,10 +10,15 @@ export const AuthContextProvider = ({ children }) => {
     ? parseJwt(token)
     : null
 
+  const handleLogOut = () => {
+    setToken("CLEARLOCALSTORAGE")
+  }
+
   const contextValue = {
     token,
     user,
-    setToken
+    setToken,
+    handleLogOut
   }
 
   return (
