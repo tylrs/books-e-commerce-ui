@@ -14,16 +14,16 @@ const Header = () => {
     setShowAuthModal(!showAuthModal)
   }
 
-  return <header className="flex relative justify-between p-8 border-b-black border-b">
+  return <header className="flex justify-between p-8 border-b-black border-b">
     <h1 className="text-xl">Buy Books</h1>
-    <div>
+    <div className="relative">
       <button className="flex gap-2" onClick={handleClick}>
         <DefaultUserIcon className="w-6 h-6 fill-black" />
         {isLoggedIn ? <span>{user.full_name}</span> : <span>Log In</span>}
         <DownCaretIcon className="w-6 h-6 fill-black" />
       </button>
+      {showAuthModal && <AuthModal setShowAuthModal={setShowAuthModal} />}
     </div>
-    {showAuthModal && <AuthModal setShowAuthModal={setShowAuthModal} />}
   </header>
 }
 
