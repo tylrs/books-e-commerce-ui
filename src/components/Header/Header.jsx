@@ -9,7 +9,8 @@ const Header = () => {
   const [showAuthModal, setShowAuthModal] = useState(false)
   const isLoggedIn = !!user
 
-  const handleClick = () => {
+  const handleClick = (e) => {
+    e.stopPropagation()
     setShowAuthModal(!showAuthModal)
   }
 
@@ -22,7 +23,7 @@ const Header = () => {
         <DownCaretIcon className="w-6 h-6 fill-black" />
       </button>
     </div>
-    {showAuthModal && <AuthModal />}
+    {showAuthModal && <AuthModal setShowAuthModal={setShowAuthModal} />}
   </header>
 }
 
