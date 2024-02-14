@@ -1,3 +1,5 @@
+import GoogleIcon from "../../assets/svgs/googleIcon.svg?react"
+
 const LoginButton = () => {
   const generateRandomState = () => {
     const validChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -26,8 +28,9 @@ const LoginButton = () => {
     location.replace(authProviderURL)
   }
   return (
-    <button onClick={handleLogin}>
-      Login
+    <button className="flex items-center gap-4 border border-black rounded-lg py-2 px-6 hover:bg-neutral-100" onClick={handleLogin}>
+      <GoogleIcon className="w-6 h-6" />
+      <span className="whitespace-nowrap">Log in with Google</span>
     </button>
   )
 }

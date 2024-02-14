@@ -23,8 +23,8 @@ const AuthModal = ({ setShowAuthModal }) => {
   useOutsideClickAction(ref, closeModal)
 
   return (
-    <div ref={ref} className="absolute border border-black right-0 top-8 p-10 z-10 bg-slate-200">
-      {isLoggedIn && <p>{user.full_name}</p>}
+    <div ref={ref} className="absolute flex flex-col gap-4 items-center border border-black rounded-lg right-0 top-8 py-10 px-20 z-10 bg-white">
+      {isLoggedIn ? <p>{user.full_name}</p> : <p>Welcome!</p>}
       {isLoggedIn ? <LogoutButton handleClick={handleLogOut} /> : <LoginButton />}
     </div>
   )
