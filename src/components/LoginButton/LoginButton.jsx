@@ -18,6 +18,7 @@ const createAuthProviderURL = () => {
   }
   const searchParams = new URLSearchParams(params)
   authProviderURL.search = searchParams
+  return authProviderURL
 }
 
 const LoginButton = () => {
