@@ -20,7 +20,7 @@ const Header = () => {
       <button className="flex gap-2" onClick={handleClick}>
         <DefaultUserIcon className="w-6 h-6 fill-black" />
         {isLoggedIn ? <span>{user.full_name}</span> : <span>Log In</span>}
-        <DownCaretIcon className="w-6 h-6 fill-black" />
+        <DownCaretIcon className={`w-6 h-6 fill-black ${showAuthModal && "rotate-180"}`} />
       </button>
       {showAuthModal && <AuthModal setShowAuthModal={setShowAuthModal} />}
     </div>
