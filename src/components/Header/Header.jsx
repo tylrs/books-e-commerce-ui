@@ -1,11 +1,11 @@
-import { useContext, useState } from "react"
+import { useState } from "react"
 import AuthModal from "../AuthModal/AuthModal"
-import { AuthContext } from "../../contexts/AuthContext"
+import { useAuth } from "../../contexts/AuthContext"
 import DownCaretIcon from "../../assets/svgs/downCaret.svg?react"
 import DefaultUserIcon from "../../assets/svgs/defaultUserIcon.svg?react"
 
 const Header = () => {
-  const { user } = useContext(AuthContext)
+  const { user } = useAuth()
   const [showAuthModal, setShowAuthModal] = useState(false)
   const isLoggedIn = !!user
 

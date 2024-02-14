@@ -1,11 +1,11 @@
-import { useContext, useEffect } from "react"
+import { useEffect } from "react"
 import { mockJWT } from "../../constants";
 import { useNavigate } from "react-router-dom";
-import { AuthContext } from "../../contexts/AuthContext";
+import { useAuth } from "../../contexts/AuthContext";
 
 const OAuthCallback = () => {
   const navigate = useNavigate()
-  const { setToken } = useContext(AuthContext)
+  const { setToken } = useAuth()
 
   useEffect(() => {
     const queryParams = new URLSearchParams(location.search)

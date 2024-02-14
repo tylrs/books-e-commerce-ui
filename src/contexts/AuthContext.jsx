@@ -1,4 +1,4 @@
-import { createContext } from "react"
+import { createContext, useContext } from "react"
 import useLocalStorage from "../hooks/useLocalStorage"
 
 export const AuthContext = createContext()
@@ -24,6 +24,10 @@ export const AuthContextProvider = ({ children }) => {
   return (
     <AuthContext.Provider value={contextValue}>{children}</AuthContext.Provider>
   )
+}
+
+export const useAuth = () => {
+  return useContext(AuthContext)
 }
 
 const parseJwt = (token) => {

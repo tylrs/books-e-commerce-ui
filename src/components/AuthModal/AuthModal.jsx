@@ -1,7 +1,7 @@
-import { AuthContext } from "../../contexts/AuthContext"
+import { useAuth } from "../../contexts/AuthContext"
 import useOutsideClickAction from "../../hooks/useOutsideClickAction"
 import LoginButton from "../LoginButton/LoginButton"
-import { useContext, useRef } from "react"
+import { useRef } from "react"
 
 const LogoutButton = ({ handleClick }) => {
   return (
@@ -12,7 +12,7 @@ const LogoutButton = ({ handleClick }) => {
 }
 
 const AuthModal = ({ setShowAuthModal }) => {
-  const { user, handleLogOut } = useContext(AuthContext)
+  const { user, handleLogOut } = useAuth()
   const isLoggedIn = !!user
   const ref = useRef(null)
 
